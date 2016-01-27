@@ -32,12 +32,20 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       // Just add some dummy data..
       user.set('name', 'Aman');
       user.set('bio', 'This is android demo.');
-      user.save();
+      user.save().then(success, failure);
       push.register(function (data) {
           push.addTokenToUser(user);
-          user.save();
+          user.save().then(success, failure);
       });
+      var success = function(response) {
+          alert('user was saved');
+      };
 
+      var failure = function(error) {
+          alert('user was NOT saved');
+      };
+
+      
 
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
