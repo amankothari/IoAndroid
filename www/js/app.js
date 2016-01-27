@@ -38,8 +38,11 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
           //alert('token: ' + data.token);
           push.addTokenToUser(user);
           user.save();
+          alert('User: ' + user.get('name'));
       };
       push.register(callback);
+
+
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
