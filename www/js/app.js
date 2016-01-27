@@ -35,7 +35,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       user.save();
 
       var callback = function (data) {
-          alert('token: ' + data.token);
+          //alert('token: ' + data.token);
           push.addTokenToUser(data, 'android');
           user.save();
       };
