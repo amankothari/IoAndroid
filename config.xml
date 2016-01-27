@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.androidpush234203" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>AndroidPush</name>
+  <preference name="phonegap-version" value="3.7.0" />
   <description>
         An Ionic Framework and Cordova project.
     </description>
@@ -14,6 +15,8 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="16"/>
   <preference name="BackupWebStorage" value="none"/>
+  <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
+  <plugin name="de.appplant.cordova.plugin.local-notification" source="pgb" />
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
