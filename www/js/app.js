@@ -42,7 +42,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       };
 
       var failure = function(error) {
-          alert('user was NOT saved');
+          alert('user was NOT saved :' + error);
       };
 
       
