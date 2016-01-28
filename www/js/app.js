@@ -32,10 +32,10 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
       // Just add some dummy data..
       user.set('name', 'Aman');
       user.set('bio', 'This is android demo.');
-      user.save().then(success, failure);
+      user.save();
       push.register(function (data) {
           push.addTokenToUser(user);
-          user.save().then(success, failure);
+          user.save();
       });
       var success = function(response) {
           alert('user was saved');
