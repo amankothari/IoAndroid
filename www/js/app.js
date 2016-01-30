@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function ($ionicPlatform, $cordovaNetwork, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -23,11 +23,19 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
               }
           }
       });
-      if (navigator.network.connection.type == Connection.NONE) {
-          alert("nocon");
-      } else {
-          alert("yescon");
-      }
+      $rootScope.$on('$cordovaNetwork:online', function (event, networkState) {
+          alert('online');
+          //$scope.isOnline = true;
+          //$scope.network = $cordovaNetwork.getNetwork();
+
+          //$scope.$apply();
+      })
+
+      // listen for Offline event
+      $rootScope.$on('$cordovaNetwork:offline', function (event, networkState) {
+          alert('offline');
+          
+      })
       var user = Ionic.User.current();
 
       if (!user.id) {
@@ -63,7 +71,7 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
     }
   });
 })
-
+ 
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
