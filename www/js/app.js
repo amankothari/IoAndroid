@@ -23,6 +23,11 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
               }
           }
       });
+      if (navigator.network.connection.type == Connection.NONE) {
+          alert("nocon");
+      } else {
+          alert("yescon");
+      }
       var user = Ionic.User.current();
 
       if (!user.id) {
